@@ -1,10 +1,10 @@
-# COMMANDS SINTAX
-- setblock sintax:
+# COMMANDS SYNTAX
+- setblock syntax:
 ```
 /setblock <position: x y z> <tileName: Block> [tileData: int]
 ```
 
-- fill sintax:
+- fill syntax:
 ```
 /fill <from: x y z> <to: x y z> <tileName: Block> [tileData: int]
 ```
