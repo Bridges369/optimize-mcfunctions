@@ -26,13 +26,13 @@ setblock 4 50 0 concrete 0
 ```
 
 * TO   file: frame.json
-```json
+```jsonc
 [
 //        fill_1               fill_2              fill_3  
-  [ [0,2, concrete 15] , [3,4, concrete 0] , [5,5, concrete 15] ],    // z0
+  [ [0,2, "concrete 15"] , [3,4, "concrete 0"] , [5,5, "concrete 15"] ],    // z0
       
 //  [ <from: x> , <to: x> , <block: name + id> ] , [..]
-  [ [0,1, concrete 15]                           , [2,5, concrete 0]  // z1
+  [ [0,1, "concrete 15"]                           , [2,5, "concrete 0"]  // z1
 ]
 ```
 
