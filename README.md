@@ -1,15 +1,15 @@
-# COMMANDS SYNTAX
-- setblock syntax:
+# Commands syntax
+- `setblock` syntax:
 ```
 /setblock <position: x y z> <tileName: Block> [tileData: int]
 ```
 
-- fill syntax:
+- `fill` syntax:
 ```
 /fill <from: x y z> <to: x y z> <tileName: Block> [tileData: int]
 ```
 
-# RESULT
+# Result
 
 * FROM file: frame.mcfunctio
 ```mcfunction
@@ -25,7 +25,7 @@ setblock 3 50 1 concrete 0
 setblock 4 50 0 concrete 0
 ```
 
-* TO   file: frame.json
+* MIDDLE   file: frame.json
 ```jsonc
 [
 //        fill_1               fill_2              fill_3  
@@ -37,10 +37,11 @@ setblock 4 50 0 concrete 0
 ```
 
 
-# SAVES
+# Saved examples
 
 Here are examples taken from the [official Ruby documentation](https://ruby-doc.org)
 
+3.1.2/Array
 ```ruby
 arr = ['foo', 0, nil, 'bar', 7, 'baz', nil]
 arr.compact  #=> ['foo', 0, 'bar', 7, 'baz']
@@ -48,9 +49,9 @@ arr          #=> ['foo', 0, nil, 'bar', 7, 'baz', nil]
 arr.compact! #=> ['foo', 0, 'bar', 7, 'baz']
 arr          #=> ['foo', 0, 'bar', 7, 'baz']
 ```
-3.1.2/Array
 
 
+3.1.2/Module
 ```ruby
 class Thing
   def square(n)
@@ -69,4 +70,3 @@ require 'date'
 %w[2017-03-01 2017-03-02].collect(&Date.method(:parse))
 #=> [#<Date: 2017-03-01 ((2457814j,0s,0n),+0s,2299161j)>, #<Date: 2017-03-02 ((2457815j,0s,0n),+0s,2299161j)>]
 ```
-3.1.2/Module
