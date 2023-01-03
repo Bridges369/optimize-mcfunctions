@@ -1,4 +1,3 @@
-require 'test/unit'
 require_relative './../modules/optimize'
 
 class OptimizeEvalMethod < Test::Unit::TestCase
