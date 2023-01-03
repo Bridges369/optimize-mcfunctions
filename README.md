@@ -11,7 +11,7 @@
 
 # Result
 
-* FROM file: frame.mcfunctio
+* FROM file: frame.mcfunction
 ```mcfunction
 setblock 0 50 0 concrete 15
 setblock 1 50 0 concrete 0
