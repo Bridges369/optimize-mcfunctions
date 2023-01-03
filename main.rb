@@ -11,10 +11,13 @@ module Optmize
   # 1, [5, 5, concrete 0]  => "setblock 5 50 1 concrete 0"
   def eval(z_coord, *args)
     if args[0] == args[1]
-      return "/setblock #{args[0]} #{DEFAULT_Y} #{args[1]} #{args[2]}"
+      return "setblock #{args[0]} #{DEFAULT_Y} #{z_coord} #{args[2]}"
     end
+    
+    return "fill #{args[0]} #{DEFAULT_Y} #{z_coord} " \
+                "#{args[1]} #{DEFAULT_Y} #{z_coord} #{args[2]}"
 
-  and
+  end
 end
 
 
