@@ -1,0 +1,10 @@
+setblock 0 50 0 concrete 15
+setblock 1 50 0 concrete 0
+setblock 2 50 0 concrete 0
+setblock 3 50 0 concrete 15
+setblock 4 50 0 concrete 15
+setblock 0 50 1 concrete 15
+setblock 1 50 1 concrete 15
+setblock 2 50 1 concrete 15
+setblock 3 50 1 concrete 0
+setblock 4 50 0 concrete 0
