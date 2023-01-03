@@ -39,6 +39,8 @@ setblock 4 50 0 concrete 0
 
 # SAVES
 
+Here are examples taken from the [official Ruby documentation](https://ruby-doc.org)
+
 ```ruby
 arr = ['foo', 0, nil, 'bar', 7, 'baz', nil]
 arr.compact  #=> ['foo', 0, 'bar', 7, 'baz']
@@ -46,6 +48,8 @@ arr          #=> ['foo', 0, nil, 'bar', 7, 'baz', nil]
 arr.compact! #=> ['foo', 0, 'bar', 7, 'baz']
 arr          #=> ['foo', 0, 'bar', 7, 'baz']
 ```
+3.1.2/Array
+
 
 ```ruby
 class Thing
@@ -65,3 +69,4 @@ require 'date'
 %w[2017-03-01 2017-03-02].collect(&Date.method(:parse))
 #=> [#<Date: 2017-03-01 ((2457814j,0s,0n),+0s,2299161j)>, #<Date: 2017-03-02 ((2457815j,0s,0n),+0s,2299161j)>]
 ```
+3.1.2/Module
