@@ -1,12 +1,12 @@
 # COMMANDS SINTAX
 - setblock sintax:
 ```
-/setblock <coord: x, y, z> <block: block_name> <<id: block_id>
+/setblock <position: x y z> <tileName: Block> [tileData: int]
 ```
 
 - fill sintax:
 ```
-/fill <from: x, y, z> <to: x, y, z> <block: block_name> <id: block_id>
+/fill <from: x y z> <to: x y z> <tileName: Block> [tileData: int]
 ```
 
 # RESULT
