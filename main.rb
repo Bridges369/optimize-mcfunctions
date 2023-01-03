@@ -1,5 +1,9 @@
 require_relative 'modules/optimize'
 
+WIDTH = 2         # z
+HEIGHT = 5        # x
+DEFAULT_Y = 50    # y
+
 __END__
 =begin
 [ lenght: WIDTH
