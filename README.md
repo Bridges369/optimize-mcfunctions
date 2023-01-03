@@ -79,3 +79,6 @@ require 'date'
 %w[2017-03-01 2017-03-02].collect(&Date.method(:parse))
 #=> [#<Date: 2017-03-01 ((2457814j,0s,0n),+0s,2299161j)>, #<Date: 2017-03-02 ((2457815j,0s,0n),+0s,2299161j)>]
 ```
+
+
+- [Unit test](https://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing)
