@@ -1,4 +1,4 @@
-require_relative './../modules/optimize'
+require_relative './../modules/commands'
 
 class OptimizeEvalMethod < Test::Unit::TestCase
   

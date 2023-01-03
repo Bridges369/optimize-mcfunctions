@@ -1,8 +1,11 @@
 require_relative 'modules/optimize'
+require_relative 'modules/vectors'
 
 WIDTH = 2         # z
 HEIGHT = 5        # x
 DEFAULT_Y = 50    # y
+
+require_relative 'tests/run_all'
 
 __END__
 =begin
