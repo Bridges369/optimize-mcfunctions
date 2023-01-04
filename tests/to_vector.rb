@@ -1,5 +1,3 @@
-require_relative './../modules/vectors'
-
 class VectorsToVectorMethod < Test::Unit::TestCase
   
   def test_setblock

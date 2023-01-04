@@ -1,11 +1,10 @@
-require_relative 'modules/optimize'
+require_relative 'modules/commands'
 require_relative 'modules/vectors'
 
-WIDTH = 2         # z
-HEIGHT = 5        # x
-DEFAULT_Y = 50    # y
-
 require_relative 'tests/run_all'
+
+
+
 
 __END__
 =begin
@@ -21,9 +20,7 @@ __END__
   ...
 ]
 =end
-filled_columns = Array.new(WIDTH) do 
-  Array.new(HEIGHT) {Array.new(3, nil)}
-end
+filled_columns = Array.new(WIDTH) {Array.new(HEIGHT)}
 
 p filled_columns
 

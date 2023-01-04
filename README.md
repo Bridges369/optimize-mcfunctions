@@ -80,5 +80,13 @@ require 'date'
 #=> [#<Date: 2017-03-01 ((2457814j,0s,0n),+0s,2299161j)>, #<Date: 2017-03-02 ((2457815j,0s,0n),+0s,2299161j)>]
 ```
 
+3.1.2/String
+```rb
+# With keyword capacity, returns a copy of str; the given capacity may set the size of the internal buffer, which may affect performance:
+
+String.new(capacity: 1) # => ""
+String.new(capacity: 4096) # => ""
+```
+
 
 - [Unit test](https://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing)
