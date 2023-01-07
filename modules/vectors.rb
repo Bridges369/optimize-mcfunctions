@@ -33,6 +33,7 @@ module Vector
           *vec[1..4] = *next_vec[0..3]
           i = 1
         else # next block
+          *vec[1..4] = *current_vec[0..3]
           matrix[index] = vec
           i = 0
         end
