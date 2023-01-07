@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+start = Time.new
 require_relative 'modules/commands'
 require_relative 'modules/vectors'
 
@@ -14,6 +17,7 @@ frame_matrix = Array.new(file.length)
 
 frame_matrix.compact!
 
+p Time.new - start
 
 __END__
 =begin
