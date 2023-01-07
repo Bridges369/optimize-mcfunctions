@@ -3,7 +3,16 @@ require_relative 'modules/vectors'
 
 require_relative 'tests/run_all'
 
+file = IO.readlines('frames/frame.mcfunction')
 
+frame_matrix = Array.new(file.length)
+
+
+
+
+
+
+frame_matrix.compact!
 
 
 __END__
