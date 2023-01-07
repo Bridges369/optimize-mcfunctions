@@ -8,7 +8,7 @@ module Command
   # [5, 5, 50, 0, "concrete 0"]  => "setblock 5 50 1 concrete 0"
   def self.to_command(vec)
     if vec[0] == vec[1]
-      return "setblock %1s %1s %1s %1s" % vec[1..-1]
+      return "setblock %1s %1s %1s %1s" % vec[1..]
     end
     
     return "fill %1s %1s %1s %1s %1s %1s %1s" % [
