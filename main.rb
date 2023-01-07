@@ -3,6 +3,7 @@
 start = Time.new
 require_relative 'modules/commands'
 require_relative 'modules/vectors'
+require_relative 'classes/array'
 
 require_relative 'tests/run_all'
 
