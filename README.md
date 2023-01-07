@@ -11,7 +11,7 @@
 
 # Result
 
-* FROM => file: frame.mcfunction
+* From:
 ```mcfunction
 setblock 0 50 0 concrete 15
 setblock 1 50 0 concrete 0
@@ -25,18 +25,7 @@ setblock 3 50 1 concrete 0
 setblock 4 50 0 concrete 0
 ```
 
-* MIDDLE => json
-```jsonc
-[
-//        fill_1               fill_2              fill_3  
-  [ [0,0, "concrete 15"] , [1,2, "concrete 0"] , [3,4, "concrete 15"] ],    // z0
-      
-//  [ <from: x> , <to: x> , <block: name + id> ] , [..]
-  [ [0,2, "concrete 15"]                           , [3,4, "concrete 0"]  // z1
-]
-```
-
-* TO => file: frame.mcfunction (new)
+* To:
 ```mcfunction
 # default coord. y: 50
 setblock 0 50 0 concrete 15
