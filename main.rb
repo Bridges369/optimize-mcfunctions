@@ -8,12 +8,18 @@ require_relative 'classes/array'
 require_relative 'tests/run_all'
 
 file = IO.readlines('frames/frame.mcfunction')
+WIDTH = 2
+HEIGTH = 5
 
+# create empity elements for memory save
 frame_matrix = Array.new(file.length)
 
-
-
-
+file.each_slice(HEIGTH) do |chunck|
+  chunck
+    .to_vector
+    .compact_matrix
+    .to_command
+end
 
 
 frame_matrix.compact!
