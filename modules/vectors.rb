@@ -13,7 +13,6 @@ module Vector
 
 
 
-
   # [[0,50,0,"block 0"],[1,50,0,"block 0"],...]
   # => [[0,1,50,0,"block 0"]]
   # matrix -> matrix
@@ -24,8 +23,8 @@ module Vector
     i = 0 # control the change of block
     vec = Array.new(5) # buffer for list_of_vectors
 
-    index = 0
-    vectors.each_cons(2) do |current_vec, next_vec|
+    vectors.each_with_index do |current_vec, index|
+      next_vec = vectors[index + 1]
       vec = [current_vec[0], nil, current_vec[2], nil, nil] if i.zero?
 
       begin
@@ -43,7 +42,6 @@ module Vector
         *vec[1..4] = *current_vec[0..3]
         i = 0
       end
-      index += 1
     end
 
     matrix.compact
