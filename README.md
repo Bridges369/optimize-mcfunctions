@@ -39,24 +39,33 @@ file.each_slice(2) do |chunk| # Is 2 because is de length of z
 end
 ```
 
-### file content
-```mcfunction
-setblock 0 50 0 concrete 15
-setblock 1 50 0 concrete 0
-setblock 2 50 0 concrete 0
-setblock 3 50 0 concrete 15
-setblock 4 50 0 concrete 15
-setblock 0 50 1 concrete 15
-setblock 1 50 1 concrete 15
-setblock 2 50 1 concrete 15
-setblock 3 50 1 concrete 0
-setblock 4 50 0 concrete 0
+## Result
+
+### `file` content
+```ruby
+[
+  "setblock 0 50 0 concrete 15",
+  "setblock 1 50 0 concrete 0",
+  "setblock 2 50 0 concrete 0",
+  "setblock 3 50 0 concrete 15",
+  "setblock 4 50 0 concrete 15",
+  "setblock 0 50 1 concrete 15",
+  "setblock 1 50 1 concrete 15",
+  "setblock 2 50 1 concrete 15",
+  "setblock 3 50 1 concrete 0",
+  "setblock 4 50 0 concrete 0"
+]
 ```
-### new_file content
-```mcfunction
-setblock 0 50 0 concrete 15
-fill 1 50 0 2 50 0 concrete 0
-fill 3 50 0 4 50 0 concrete 15
-fill 0 50 1 2 50 1 concrete 15
-fill 3 50 1 4 50 1 concrete 0
+### `new_file` content
+```ruby
+[
+  # z = 0
+  ["setblock 0 50 0 concrete 15",
+  "fill 1 50 0 2 50 0 concrete 0",
+  "fill 3 50 0 4 50 0 concrete 15"],
+
+  # z = 1
+  ["fill 0 50 1 2 50 1 concrete 15",
+  "fill 3 50 1 4 50 1 concrete 0"]
+]
 ```
