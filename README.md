@@ -16,7 +16,7 @@ this script accepts as a parameter an array of 'setblock' commands that have imm
 ```ruby
 require_relative './OptimizeSingleFile'
 
-file = <~MCFUNCTION
+file = <<~MCFUNCTION
   setblock 0 50 0 concrete 15
   setblock 1 50 0 concrete 0
   setblock 2 50 0 concrete 0
@@ -27,12 +27,12 @@ file = <~MCFUNCTION
   setblock 2 50 1 concrete 15
   setblock 3 50 1 concrete 0
   setblock 4 50 1 concrete 0
-MCFUNCTION.split("\n")
+MCFUNCTION
 
 LENGTH = 5 # there are 5 blocks of x for every 1 block of z
 new_file = Array.new
 
-file.each_slice(2) do |chunk| # Is 2 because is de length of z
+file.split("\n").each_slice(2) do |chunk| # Is 2 because is de length of z
   new_file.push(
     chunk.optimize_setblock_array
   )
