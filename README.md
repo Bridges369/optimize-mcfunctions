@@ -37,6 +37,9 @@ file.each_slice(2) do |chunk| # Is 2 because is de length of z
     chunk.optimize_setblock_array
   )
 end
+
+# Normalize the array
+new_file = [].concat(*new_file)
 ```
 
 ## Result
