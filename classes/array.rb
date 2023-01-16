@@ -6,7 +6,7 @@ class Array
   include Command
 
   def to_vector
-    self.map { |cmd| Vector.to_vector(cmd) }
+    self.map! { |cmd| Vector.to_vector(cmd) }
   end
 
   def compact_matrix
@@ -14,6 +14,6 @@ class Array
   end
 
   def to_command
-    self.map { |vec| Command.to_command(vec) }
+    self.map! { |vec| Command.to_command(vec) }
   end
 end
