@@ -11,10 +11,17 @@ require_relative 'classes/array'
 require 'test/unit'
 require_relative 'tests/run_all'
 
-file = IO.readlines('frames/frame.mcfunction')
+# Local que é armazenado os arquivos de functions
+PATH = "frames"
+# Nome do arquivo de functions
+FILE_NAME = "frame.mcfunction"
+# Se esta opção for verdadeira, ele criara um novo arquivo com o conteúdo gerado, caso contrário sobrescreverá o original.
+CREATE_NEW_FILE = true
+
 WIDTH = 2
 HEIGTH = 5
 
+file = IO.readlines(File.join(PATH, "/", FILE_NAME))
 # create empity elements for memory save
 frame_matrix = Array.new(file.length)
 
