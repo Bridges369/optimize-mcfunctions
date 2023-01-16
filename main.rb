@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 start = Time.new
+
+# Sanitize the arguments
+# require 'args_parser'
+# require_relative 'modules/args'
 require_relative 'modules/commands'
 require_relative 'modules/vectors'
 require_relative 'classes/array'
-
+require 'test/unit'
 require_relative 'tests/run_all'
 
 file = IO.readlines('frames/frame.mcfunction')
