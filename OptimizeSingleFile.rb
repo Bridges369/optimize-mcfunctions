@@ -19,7 +19,7 @@ module OptimizeSingleFile
   # [[0,50,0,"block 0"],[1,50,0,"block 0"],...]
   # => [[0,1,50,0,"block 0"]]
   # matrix -> matrix
-  def compact_matrix(vectors)
+  def compact_matrix(vectors, delta_coordinate)
     # matrix of vectors
     matrix = Array.new(vectors.length)
 
@@ -28,12 +28,26 @@ module OptimizeSingleFile
 
     vectors.each_with_index do |current_vec, index|
       next_vec = vectors[index + 1]
-      vec = [current_vec[0], nil, current_vec[2], nil, nil] if i.zero?
+      vec = (delta_coordinate==:x ? [ # when the coord. z is static on current chunk
+        current_vec[0], 
+        nil, 
+        current_vec[2],
+        nil, 
+        nil
+      ] : [ # when the coord. x is static on the current chunk
+        current_vec[2],
+        current_vec[0],
+        nil,
+        nil,
+        nil
+      ]) if i.zero?
 
       begin
-        # same block
+        # same block 
         if current_vec[3] == next_vec[3]
-          *vec[1..4] = *next_vec[0..3]
+          delta_coordinate==:x ?
+            (*vec[1..4] = *next_vec[0..3])
+            : (*vec[2..4] = *next_vec[1..3])
           i = 1
         else # next block
           *vec[1..4] = *current_vec[0..3]
@@ -58,12 +72,15 @@ module OptimizeSingleFile
   # [x0, x1, y, z, block] => /fill || /setblock
   # [0, 2, 50, 0, "concrete 15"] => "fill 0 50 0 2 50 0 concrete 15"
   # [5, 5, 50, 0, "concrete 0"]  => "setblock 5 50 1 concrete 0"
-  def to_command(vec)
-    return "setblock %1d %1d %1d %1s" % vec[1..] if vec[0] == vec[1]
+  def to_command(vec, delta_coordinate)
+      return "setblock %1d %1d %1d %1s" % vec[1..] \
+        if vec[0] == vec[delta_coordinate == :x ? 1 : 3]
 
-    return "fill %1d %1d %1d %1d %1d %1d %1s" % [
-      vec[0], *vec[2..3], vec[1], *vec[2..]
-    ]
+      return "fill %1d %1d %1d %1d %1d %1d %1s" % if delta_coordinate == :x
+        [ vec[0], *vec[2..3], vec[1], *vec[2..] ] 
+      else 
+        [ *vec[1..2], vec[0], *vec[1..2], *vec[3..] ]
+      end
   end
 
 end
@@ -72,10 +89,10 @@ end
 class Array
   include OptimizeSingleFile
 
-  def optimize_setblock_array
+  def optimize_setblock_array(delta_coordinate = :x)
     tmp = self.map { |command| to_vector(command) } # Matrix[cmds] -> Matrix[vecs]
-    tmp = compact_matrix(tmp)                       # Matrix[vecs] -> Matrix[optimized_vecs]
-    return tmp.map { |vec| to_command(vec) }        # Matrix[optimezed_vecs] -> Matrix[cmds]
+    tmp = compact_matrix(tmp, delta_coordinate)                       # Matrix[vecs] -> Matrix[optimized_vecs]
+    return tmp.map { |vec| to_command(vec, delta_coordinate) }        # Matrix[optimezed_vecs] -> Matrix[cmds]
   end
 
 end
