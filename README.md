@@ -56,7 +56,7 @@ new_file = [].concat(*new_file)
   "setblock 1 50 1 concrete 15",
   "setblock 2 50 1 concrete 15",
   "setblock 3 50 1 concrete 0",
-  "setblock 4 50 0 concrete 0"
+  "setblock 4 50 1 concrete 0"
 ]
 ```
 ### `new_file` content
