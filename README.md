@@ -1,14 +1,3 @@
-# Commands syntax
-- `setblock` syntax:
-```
-/setblock <position: x y z> <tileName: Block> [tileData: int]
-```
-
-- `fill` syntax:
-```
-/fill <from: x y z> <to: x y z> <tileName: Block> [tileData: int]
-```
-
 # Implementation
 
 this script accepts as a parameter an array of 'setblock' commands that have immutable y and z coordinates throughout the array
