@@ -32,9 +32,10 @@ MCFUNCTION
 LENGTH = 5 # there are 5 blocks of x for every 1 block of z
 new_file = Array.new
 
-file.split("\n").each_slice(2) do |chunk| # Is 2 because is de length of z
-  new_file.push(
-    chunk.optimize_setblock_array
+file.split("\n").each_slice(LENGTH) do |chunk|
+    new_file.push(
+    # the argument can be :x or :z according to the coordinate that varies in the chunk
+    chunk.optimize_setblock_array(:x)
   )
 end
 
