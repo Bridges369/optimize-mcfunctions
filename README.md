@@ -1,3 +1,5 @@
+This module serves to optimize the size of `mcfunction` files that contain large amounts of setblock commands.
+
 # Implementation
 
 this script accepts as a parameter an array of 'setblock' commands that have immutable y and z coordinates throughout the array
